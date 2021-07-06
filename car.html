@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<style>
+    body{
+      height: 100%;
+      background-image:url("https://img.freepik.com/free-vector/two-men-having-car-accident-isolated-flat-vector-illustration-cartoon-people-looking-automobile-damage_74855-8655.jpg?size=626&ext=jpg");
+      background-repeat: no-repeat;
+      background-size: 1200px 590px;
+      background-attachment: fixed;
+    }
+    #in1{
+        width: 20%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 8px;
+        outline:aquamarine;
+    }
+        div#d2{
+        border: 2px solid var(--right-color);
+    }
+    #d3{
+        color: navy;
+        font: italic bold 35px sans-serif;
+        position: absolute;
+        left: 1090px;       
+           } 
+
+    .d1{
+        padding-left: 80px;
+    }
+    h1{
+        font-size: 42px;
+        font-family: serif;
+        color: var(--left-color);
+    }
+</style>      
+<body>
+  <div class="d1">
+            <b><i><h1>VEHICLE INFORMATION</h1></i></b>
+            <div id="d2">
+            <input type="text" id="in1" name="plate_no" placeholder="Enter vehicle no." />
+            <button onclick="lw()" class="btn">INFO</button>
+            <pre><div align=right id="d3"></pre>
+            </div>
+            </div>
+            </div>   
+
+<script>
+      function lw()
+	{
+	var i = document.getElementById("in1").value;
+	var xhr = new XMLHttpRequest();
+	
+
+	xhr.open("GET", "http://192.168.43.64/cgi-bin/car.py?x=" + i, true);
+	xhr.send();
+	xhr.onload= function(){ 
+	var output = xhr.responseText;
+	document.getElementById("d3").innerHTML = output;
+	}
+	}
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </
